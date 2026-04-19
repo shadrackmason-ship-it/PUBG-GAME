@@ -1,0 +1,22 @@
+[
+  { "name": "AKM", "category": "AR", "damage": 49 },
+  { "name": "M416", "category": "AR", "damage": 41 },
+  { "name": "SCAR-L", "category": "AR", "damage": 42 },
+  { "name": "QBZ", "category": "AR", "damage": 41 },
+
+  { "name": "UMP45", "category": "SMG", "damage": 39 },
+  { "name": "Vector", "category": "SMG", "damage": 31 },
+  { "name": "Uzi", "category": "SMG", "damage": 26 },
+
+  { "name": "Kar98k", "category": "SR", "damage": 75 },
+  { "name": "AWM", "category": "SR", "damage": 105 },
+
+  { "name": "Mini 14", "category": "DMR", "damage": 46 },
+  { "name": "SKS", "category": "DMR", "damage": 53 },
+
+  { "name": "S12K", "category": "Shotgun", "damage": 22 },
+  { "name": "S686", "category": "Shotgun", "damage": 216 },
+
+  { "name": "DP-28", "category": "LMG", "damage": 51 },
+  { "name": "M249", "category": "LMG", "damage": 45 }
+]
