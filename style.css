@@ -1,226 +1,326 @@
+
+/* =========================
+   🎯 FPS THEME (HUD STYLE)
+========================= */
 :root {
-  --bg: #0f172a;        /* dark base */
-  --accent: #22c55e;    /* neon green */
-  --gold: #eab308;      /* highlight */
+  --bg: #05070d;
+  --panel: rgba(20, 25, 35, 0.85);
+  --panel-solid: #121826;
+
+  --primary: #00e5ff;     /* neon cyan */
+  --primary2: #00ff88;    /* neon green */
+  --danger: #ff3b3b;
+
+  --text: #e6f1ff;
+  --muted: #8aa0b6;
+
+  --border: rgba(0, 229, 255, 0.25);
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
+/* =========================
+   GLOBAL
+========================= */
 body {
-  font-family: "Orbitron", sans-serif;
-  background: var(--bg);
-  color: white;
-  overflow-x: hidden;
-  position: relative;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: radial-gradient(circle at top, #0b1220, var(--bg));
+  color: var(--text);
 }
 
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  width: 200%;
-  height: 200%;
-  top: -50%;
-  left: -50%;
-  background-image: radial-gradient(var(--accent) 1px, transparent 1px);
-  background-size: 50px 50px;
-  opacity: 0.08;
-  animation: moveParticles 60s linear infinite;
-  z-index: -1;
-}
-
-body::after {
-  background-image: radial-gradient(var(--gold) 1px, transparent 1px);
-  animation-duration: 90s;
-  opacity: 0.05;
-}
-
-@keyframes moveParticles {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(200px, 200px);
-  }
-}
-
+/* =========================
+   NAVBAR (HUD TOP BAR)
+========================= */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  background: rgba(2, 6, 23, 0.9);
-  border-bottom: 2px solid var(--gold);
-  backdrop-filter: blur(8px);
+  padding: 14px 22px;
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
+.navbar h1 {
+  color: var(--primary);
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-.logo span {
-  color: var(--accent);
-}
-
-.navbar nav a {
-  margin-left: 20px;
+nav a {
+  color: var(--text);
+  margin: 0 10px;
   text-decoration: none;
-  color: white;
-  transition: 0.3s;
+  font-size: 14px;
+  transition: 0.2s;
 }
 
-.navbar nav a:hover,
-.navbar nav a.active {
-  color: var(--accent);
-  text-shadow: 0 0 12px var(--accent);
+nav a:hover {
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary);
 }
 
+/* =========================
+   HERO (FPS INTRO SCREEN)
+========================= */
 .hero {
   text-align: center;
-  padding: 90px 20px;
-  background: linear-gradient(135deg, #020617, var(--bg));
+  padding: 80px 20px;
+  position: relative;
 }
 
-.hero h2 {
+.hero h1 {
   font-size: 42px;
-  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--primary);
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
 }
 
 .hero p {
-  max-width: 600px;
-  margin: auto;
-  color: #cbd5e1;
+  color: var(--muted);
+  font-size: 15px;
 }
 
-.small-hero {
-  padding: 50px 20px;
-}
-
+/* =========================
+   BUTTON (TACTICAL STYLE)
+========================= */
 .btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: var(--gold);
-  color: black;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, var(--primary), var(--primary2));
+  color: #000;
   font-weight: bold;
-  border-radius: 6px;
   text-decoration: none;
-  transition: 0.3s;
+  border-radius: 6px;
+  transition: 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .btn:hover {
-  background: var(--accent);
-  color: white;
-  box-shadow: 0 0 18px var(--accent);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--primary);
 }
 
-.controls {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  padding: 20px;
-  flex-wrap: wrap;
-}
-
-.controls input,
-.controls select {
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  outline: none;
-}
-
+/* =========================
+   GRID (DASHBOARD PANELS)
+========================= */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  gap: 16px;
   padding: 20px;
 }
 
+/* =========================
+   CARDS (HUD PANELS)
+========================= */
 .card {
-  background: rgba(2, 6, 23, 0.95);
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  transition: 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(34,197,94,0.15), transparent);
-  opacity: 0;
-  transition: 0.3s;
-}
-
-.card:hover::before {
-  opacity: 1;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  transition: 0.2s;
+  backdrop-filter: blur(8px);
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent);
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+}
+
+/* images */
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+/* text */
+.card h3 {
+  margin: 8px 0;
+  color: var(--primary);
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================
+   SECTION HEADERS
+========================= */
+.section-title {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.section-title h2 {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   INPUTS (SEARCH HUD)
+========================= */
+input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--panel-solid);
+  color: var(--text);
+  outline: none;
+}
+
+button {
+  padding: 10px 14px;
+  border: none;
+  background: var(--primary);
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  box-shadow: 0 0 15px var(--primary);
+}
+
+/* =========================
+   ACTION PANEL
+========================= */
+.action-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #0b0f1a, #05070c);
+  color: #fff;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+  background: rgba(0,0,0,0.8);
+  border-bottom: 1px solid #1f2a44;
+}
+
+.navbar h1 {
+  color: #00ffcc;
+  letter-spacing: 2px;
+}
+
+/* ================= HERO ================= */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h2 {
+  font-size: 28px;
+  color: #00ffcc;
+}
+
+/* ================= INPUT ================= */
+input {
+  width: 60%;
+  padding: 12px;
+  margin-top: 15px;
+  border: 1px solid #00ffcc;
+  background: #0a0f1a;
+  color: white;
+  outline: none;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  background: linear-gradient(90deg, #00ffcc, #0077ff);
+  border: none;
+  padding: 10px 15px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* ================= GRID ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+/* ================= GAME CARD (STEAM STYLE) ================= */
+.card {
+  background: rgba(20, 25, 40, 0.8);
+  border: 1px solid #1f2a44;
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  border-color: #00ffcc;
+  box-shadow: 0 0 15px #00ffcc33;
 }
 
 .card img {
   width: 100%;
-  height: 140px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-
-.map-card {
-  overflow: hidden;
-  padding: 0;
-}
-
-.map-card img {
-  width: 100%;
-  height: 180px;
+  height: 120px;
   object-fit: cover;
-  border-radius: 12px 12px 0 0;
-  transition: transform 0.4s ease, filter 0.4s ease;
+  border-radius: 6px;
 }
 
-.map-card:hover img {
-  transform: scale(1.2);
-  filter: brightness(1.15);
-}
-
-.loading {
+/* ================= STATUS BAR ================= */
+.action-section {
   text-align: center;
-  padding: 20px;
-  color: var(--gold);
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  background: #020617;
-  border-top: 1px solid var(--gold);
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero h2 {
-    font-size: 28px;
-  }
-
-  .controls {
-    flex-direction: column;
-    align-items: center;
-  }
+  padding: 10px;
+  background: rgba(0,0,0,0.5);
+  border-top: 1px solid #1f2a44;
+  border-bottom: 1px solid #1f2a44;
 }

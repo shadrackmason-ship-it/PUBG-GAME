@@ -2,67 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weapons Database</title>
+  <title>Weapons Guide</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header class="navbar">
-    <h1 class="logo">PUBG<span>Guide</span></h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="weapons.html" class="active">Weapons</a>
-      <a href="maps.html">Maps</a>
-      <a href="loadouts.html">Loadouts</a>
-    </nav>
-  </header>
+<h1>Weapons Guide</h1>
 
-  <!-- HERO -->
-  <section class="hero small-hero">
-    <h2>Weapons Database</h2>
-    <p>Search, filter and compare all weapons</p>
-  </section>
+<input type="text" id="search" placeholder="Search weapon..." />
 
-  <!-- CONTROLS -->
-  <section class="controls">
-    <input id="searchInput" type="text" placeholder="Search weapon...">
+<div>
+  <button id="all">All</button>
+  <button id="ar">AR</button>
+  <button id="smg">SMG</button>
+  <button id="sniper">Sniper</button>
+</div>
 
-    <!-- CATEGORY FILTER -->
-    <select id="categoryFilter">
-      <option value="">All</option>
-      <option value="AR">AR</option>
-      <option value="SMG">SMG</option>
-      <option value="SR">SR</option>
-      <option value="DMR">DMR</option>
-      <option value="Shotgun">Shotgun</option>
-      <option value="LMG">LMG</option>
-    </select>
+<div id="weapons-container"></div>
 
-    <!-- TYPE FILTER -->
-    <select id="typeFilter">
-      <option value="">All Types</option>
-      <option value="melee">Melee</option>
-      <option value="ranged">Ranged</option>
-      <option value="explosive">Explosive</option>
-    </select>
-  </section> <!-- ✅ FIXED -->
+<div id="weapon-details">
+  <p>Click a weapon to see details</p>
+</div>
 
-  <!-- WEAPONS GRID -->
-  <section class="content">
-    <div id="results" class="grid"></div> <!-- ✅ FIXED ID -->
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 PUBG Pro Guide | Built for Learning & Strategy</p>
-  </footer>
-
-  <!-- SCRIPTS -->
-  <script src="api.js" defer></script>
-  <script src="app.js" defer></script>
+<!-- CONNECT JS -->
+<script type="module" src="weapons.js"></script>
 
 </body>
 </html>

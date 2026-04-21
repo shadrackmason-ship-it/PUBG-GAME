@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Search | GameguideHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <h1>GAMEguideHUB // LIVE INTEL</h1>
+
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="search.html" class="active">SEARCH</a>
+    <a href="maps.html">MAPS</a>
+    <a href="loadouts.html">LOADOUTS</a>
+  </nav>
+</header>
+
+<!-- ================= HERO SEARCH ================= -->
+<section class="hero small">
+
+  <h2>LIVE GAME SEARCH</h2>
+  <p>Type or select a category to instantly find games</p>
+
+  <!-- LIVE INPUT -->
+  <input id="searchBox" placeholder="Search PUBG, GTA, FIFA, Fortnite..." autocomplete="off" />
+
+</section>
+
+<!-- ================= QUICK CATEGORIES ================= -->
+<section class="action-section">
+  <h2>LIVE INTEL SYSTEM ACTIVE</h2>
+  <p>Scan games instantly or use quick access</p>
+
+  <div>
+    <button class="btn" onclick="searchGames('pubg')">PUBG</button>
+    <button class="btn" onclick="searchGames('call of duty')">COD</button>
+    <button class="btn" onclick="searchGames('fortnite')">FORTNITE</button>
+    <button class="btn" onclick="searchGames('gta')">GTA</button>
+    <button class="btn" onclick="searchGames('football')">FOOTBALL</button>
+    <button class="btn" onclick="searchGames('truck simulator')">TRUCKS</button>
+  </div>
+</section>
+
+<!-- ================= STATUS ================= -->
+<section class="action-section">
+  <h2> REAL-TIME SCAN ACTIVE</h2>
+  <p>Results update instantly as you type</p>
+</section>
+
+<!-- ================= RESULTS ================= -->
+<section id="results" class="grid">
+  <div class="card">
+    <p>Start typing or select a category...</p>
+  </div>
+</section>
+
+<!-- ================= SCRIPT ================= -->
+<script src="app.js"></script>
+
+</body>
+</html>
