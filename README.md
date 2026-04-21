@@ -1,5 +1,5 @@
 ##  GAME GUIDE
-A lightweight PUBG GAME GUIDE web page that helps players explore weopons,compare states,and improve gameplay strategy.Built for lerning 
+A lightweight ALL GAME GUIDE web page that helps players explore weopons,compare states,and improve gameplay strategy.Built for lerning 
 
 ## FEATURES
 .Search all PUBG  weapons instantly 
