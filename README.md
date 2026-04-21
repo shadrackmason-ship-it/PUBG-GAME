@@ -1,13 +1,13 @@
-## PUBG GAME GUIDE
+##  GAME GUIDE
 A lightweight PUBG GAME GUIDE web page that helps players explore weopons,compare states,and improve gameplay strategy.Built for lerning 
 
 ## FEATURES
-.Search all PUBG  weopons instantly 
+.Search all PUBG  weapons instantly 
 .filter weopons by category(AR,SMRG,SR,DMR)
-.Uses local weopons.json data 
+.Uses local Package.json data 
 
 ## HOW IT WORKS
-1. Weopons.json stores all pubg weopons data 
+1. Package.json stores all games and weopons data 
 2. api.js loads the data into the app
 3.app.js
       .Displays weopons
@@ -24,11 +24,11 @@ A lightweight PUBG GAME GUIDE web page that helps players explore weopons,compar
 git clone https://github.com/shadrackmason-ship-it/mason-coding.git
 
 ## Purpose of This Project
-This PUBG Game Guide helps players:
+This Game Guide helps players:
   .Learn weapon stats quickly
   .Compare weapons for better loadouts
   .Improve strategy decisions in matches
   .Understand PUBG weapon categories
 
 ## Project Type
- Educational PUBG Game Guide
+ Educational Game Guide
